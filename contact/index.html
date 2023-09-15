@@ -361,50 +361,16 @@
         <div class="card">
             
             <div class="card" data-aos="fade-up">
-<div id="comment_head">
-    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; padding-left: 20px; top: 15px; padding-bottom: 5px;">
-        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
-        <span>评论</span>
+    <div id="utteranc-container" class="card-content">
+        <script src="https://utteranc.es/client.js"
+            repo="xi0ba/comment-area"
+            issue-term="title"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+        </script>
     </div>
 </div>
-<script type="text/javascript">
-    $(function() {
-        if(document.getElementById('contact_plan') !== null){
-            document.getElementById('comment_head').remove();
-        }
-    })
-</script>
-
-<div id="utterances-container" class="card-content center-align">
-    <span class="utterances_loading" style="align-content: center;">
-        <i class="fas fa-spinner fa-spin"></i>
-    </span>
-    <script type="text/javascript">
-        function _checkUtteranc() {
-            document.getElementsByClassName('utterances').length == 1
-            ? ($('.utterances_loading').fadeTo(1e3, 0))
-            : setTimeout(_checkUtteranc, 1000);
-        }
-
-        setTimeout(() => {
-            var utterances = document.createElement('script');
-            utterances.type = 'text/javascript';
-            utterances.async = true;
-            utterances.setAttribute('issue-term','title') // 这里我们设置为使用页面标题作为 issue titile，更多的请参阅 utterances 官网
-            utterances.setAttribute('repo','xi0ba/comment-area') // 这里设置你自己的 utteranc 评论仓库
-            utterances.setAttribute('label','comment') // 设置 issue 的标签
-            $('body').hasClass('DarkMode')
-            ? (utterances.setAttribute('theme','github-dark'))
-            : (utterances.setAttribute('theme','github-light')),
-            utterances.crossorigin = 'anonymous';
-            utterances.src = 'https://utteranc.es/client.js';
-            document.getElementById('utterances-container').appendChild(utterances);
-            _checkUtteranc();
-        }, 1);
-    </script>
-</div>
-</div>
-
             
 
             
